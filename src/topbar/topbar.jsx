@@ -20,7 +20,7 @@ export default function topbar() {
        </div>
        <div className="topRight">
         <img className="top-img"
-        src="https://media-exp1.licdn.com/dms/image/D4D35AQENzIXQEq8s5A/profile-framedphoto-shrink_400_400/0/1655110960519?e=1655982000&v=beta&t=xAmMGte5q0MOnLpg-iL10QpYcwtlKhGKB7X3zDC-Gc0" 
+        src="https://avatars.githubusercontent.com/u/74093536?s=400&u=da1e3aaed0b2ec4db7ca6220926f31609e5524c4&v=4" 
         alt="" />
         <i className="topIcon-srch  fa-solid fa-magnifying-glass"></i>
        </div>
