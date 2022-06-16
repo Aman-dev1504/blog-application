@@ -1,0 +1,8 @@
+.Header{
+    margin-top: 10px;
+}
+.Header-img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
