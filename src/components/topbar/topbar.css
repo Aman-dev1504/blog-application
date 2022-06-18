@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    z-index: 999;
 }
 .topLeft,.topRight{
     flex: 3;
@@ -29,10 +30,20 @@
 .topIcon{
     font-size: 20px;
     margin-right: 10px;
-    color: #1363DF;
     cursor: pointer;
 }
-
+.fa-twitter{
+    color: #13bddf;
+}
+.fa-pinterest{
+    color: #df1313;
+}
+.fa-facebook{
+    color: #1363DF;
+}
+.fa-instagram{
+    color: #df13c7;
+}
 .top-img{
   width: 40px;
   height: 40px;
