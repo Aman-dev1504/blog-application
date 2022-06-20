@@ -6,6 +6,7 @@ import Write from "./pages/write/write";
 import Settings from "./pages/settings/settings";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
+import Contactus from "./pages/contact/contact";
 
 import {
   BrowserRouter as Router,
@@ -14,7 +15,7 @@ import {
   Routes
 } from "react-router-dom";
 function App() {
-  const user =false;
+  const user =true;
   return (
     <Router>
   <Topbar/>
@@ -27,6 +28,7 @@ function App() {
   </Switch> */}
   <Routes>
   <Route exact path="/" element={<Home />} />
+  <Route exact path="/contact" element={<Contactus />} />
   <Route exact path="/login" element={user ? <Home/> :<Login />} />
   <Route exact path="/register" element={user ? <Home/> : <Register />} />
   <Route exact path="/write" element={user ?<Write/>:<Register/>} />

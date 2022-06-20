@@ -1,0 +1,64 @@
+.contact{
+    height: calc(100vh - 50px);
+    display: flex;
+font-family: 'Poppins', sans-serif;
+}
+.contactWrapper{
+    display: flex;
+    align-items: center;
+    padding: 150px;
+}
+.ContactImg{
+    flex: 5;
+    align-self: center;
+    justify-content: center;
+}
+.contactFormSec{
+    flex: 5;
+}
+.ContactusForm{
+    display: flex;
+    flex-direction: column;
+}
+.contactusForm{
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactus > h3{
+    color:#06283D ;
+    font-size: 30px;
+    margin-bottom:50px;
+}
+
+.contactusForm > input,textarea{
+    font-size: 18px;
+    width: 500px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-bottom:1px solid #06283D;
+    margin-bottom: 10px;
+  margin-left: 100px;
+}
+.contactusBtn{
+   padding:20px;
+   width: 200px;
+    background-color: #06283D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 20px;
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+.contactusBtn:hover{
+    color: green;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+}
