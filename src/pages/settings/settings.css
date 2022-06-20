@@ -1,6 +1,86 @@
 .settings{
 display: flex;
+font-family: 'Poppins', sans-serif;
 }
 .settingsWrapper{
     flex: 9;
+    padding: 20px;
+
 }
+.settingsTitle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+.settingupdateTitle{
+ font-size: 30px;
+ margin-bottom: 20px;
+color: #06283D;   
+}
+.settingdeleteTitle{
+    color:   rgb(198, 0, 0);
+    cursor: pointer;
+    font-size: 20px;
+
+}
+.settingsForm{
+    display: flex;
+    flex-direction: column;
+}
+.settingsPp{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+  
+}
+.settingsPp > img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.settingsIcon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    background-color: #06283D;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.settingsForm > label{
+font-size: 20px;
+margin-top: 20px;
+}
+.settingsForm > input{
+    color: #06283D;
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #06283D;
+    outline: none;
+}
+.settingsSubmit{
+width: 150px;
+align-self: center;
+border: none;
+border-radius: 10px;
+background-color: teal;
+color: white;
+padding: 10px;
+font-size: 20px;
+margin-top: 25px;
+transition-duration: 500ms;
+}
+.settingsSubmit:hover{
+    color: teal;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+

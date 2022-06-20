@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom"
 import "./post.css"
-
 export default function post() {
   return (
     <div className='post'>
@@ -10,7 +10,7 @@ export default function post() {
           <span className="postsCat">MERN</span>
           <span className="postsCat">Web Development</span>
         </div>
-        <span className="postTitle">Best Roadmap to learn MERN Stack in 2022</span>
+        <span className="postTitle"><Link className="Link" to="/post/:postId">Best Roadmap to learn MERN Stack in 2022</Link> </span>
       <hr/>
       <span className="postDate">1 Hour ago</span>
       </div>
