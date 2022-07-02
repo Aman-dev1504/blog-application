@@ -1,6 +1,11 @@
+import { useLocation } from "react-router";
 import "./singlepost.css"
 
-export default function singlepost() {
+export default function Singlepost() {
+
+const location= useLocation();
+console.log(location);
+
   return (
     <div  className="singlePost">
     <div className="singlepostWrapper">

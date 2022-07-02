@@ -1,25 +1,27 @@
 import { Link } from "react-router-dom"
 import "./post.css"
-export default function post() {
+export default function post({post}) {
   return (
     <div className='post'>
+      {post.photo && (
       <img className="postImg"
-      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+      src="{post.photo}" alt="" />
+      )}
       <div className="postInfo">
         <div className="postCat">
-          <span className="postsCat">MERN</span>
-          <span className="postsCat">Web Development</span>
+          {post.categories.map(c=>(
+     <span className="postsCat">{c.name}</span>
+          ))}
         </div>
-        <span className="postTitle"><Link className="Link" to="/post/:postId">Best Roadmap to learn MERN Stack in 2022</Link> </span>
+        <Link className="Link" to={`/post/${post._id}`}>
+        <span className="postTitle">{post.title} </span>
+
+        </Link>
       <hr/>
-      <span className="postDate">1 Hour ago</span>
+      <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
       </div>
       <p className="postDec">
-        Lorem ipsum dolor sit amet consectetur 
-        adipisicing elit. Beatae obcaecati laudantium cumque consequuntur quasi porro laborum! 
-        Debitis quibusdam, repudiandae quos neque, nulla doloremque optio delectus mollitia ipsa reiciendis incidunt minus?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum dignissimos nemo deserunt unde eaque, quia ipsam cum placeat doloribus minus ipsa veritatis non rerum, inventore, eum nostrum dolores velit nesciunt!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odio consequatur doloremque amet culpa praesentium, modi sapiente suscipit, quis nobis in? Architecto enim fugit rerum fugiat voluptatibus velit nisi ipsum.
+        {post.desc}
       </p>
     </div>
   )

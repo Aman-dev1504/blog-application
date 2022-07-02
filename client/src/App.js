@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./pages/home/home"
+import Home from "./pages/home/Home"
 import Topbar from "./components/topbar/topbar";
 import Single from "./pages/single/single";
 import Write from "./pages/write/write";
@@ -15,7 +15,7 @@ import {
   Routes
 } from "react-router-dom";
 function App() {
-  const user =true;
+  const user =false;
   return (
     <Router>
   <Topbar/>

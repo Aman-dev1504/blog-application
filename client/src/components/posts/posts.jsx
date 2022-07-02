@@ -1,15 +1,13 @@
 import "./posts.css"
 import Post from "../post/post"
 
-export default function posts() {
+export default function posts({post}) {
   return (
     <div className="posts">
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+      {  post.map(p=>(
+          <Post post={p}/>
+        ))
+}
     </div>
-  )
+  );
 }
