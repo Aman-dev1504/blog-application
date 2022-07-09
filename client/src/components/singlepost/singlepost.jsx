@@ -1,66 +1,46 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import "./singlepost.css"
+import { useState } from "react";
 
 export default function Singlepost() {
 
 const location= useLocation();
-console.log(location);
+const path= (location.pathname.split("/")[2]);
+const [post,setPosts]=useState({})
+useEffect(()=>{
+  const getPost = async () =>{
+    const res =await axios.get("/post/"+path)
+    setPosts(res.data);
+  };
+  getPost()
+},[path]);
 
   return (
     <div  className="singlePost">
     <div className="singlepostWrapper">
+      {post.photo &&
         <img 
-        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" className="singlepostImg" />
-        <h1 className="singlepostTitle">How to learn DSA in 60days
+        src={post.photo} alt="" className="singlepostImg" />
+      }
+        <h1 className="singlepostTitle">{post.title}
         <div className="singlepostEdit">
         <i className="singlepostIcon fa-solid fa-pen-to-square"></i>
         <i className="singlepostIcon fa-solid fa-trash-can"></i>
         </div>
         </h1>
         <div className="singlepostInfo">
-            <span className="singlepostAuthor">Author: <b>Aman</b></span>
-            <span className="singlepostDate">Posted: <b>1 Hour ago</b></span>
+            <span className="singlepostAuthor">Author: 
+            <Link to ={`/?user=${post.username}`} className="Link">
+            <b>{post.username}</b>
+            </Link>
+            </span>
+            <span className="singlepostDate">Posted: {new Date(post.createdAt).toDateString()}</span>
         </div>
         <p className="singlepostDes">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti architecto quo vero earum fugiat animi aspernatur, 
-            repellat consequatur autem quod, 
-            libero est saepe deleniti quibusdam numquam dignissimos nemo blanditiis doloribus.
+            {post.desc}
         </p>
     </div>
          </div>
