@@ -9,7 +9,7 @@ export default function Home() {
 
 const [post,setPosts]=useState([]);
 const {search} = useLocation();
-console.log(search)
+
 
 
 useEffect(() => {

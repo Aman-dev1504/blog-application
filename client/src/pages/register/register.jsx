@@ -10,8 +10,8 @@ export default function Register() {
   const [error,setError ]=useState(false);
 
   const handleSubmit=async (e)=>{
-    setError(false);
     e.preventDefault();
+    setError(false);
     try{
       const res= await axios.post("/auth/register",{
         username,
