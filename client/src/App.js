@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Home from "./pages/home/Home"
 import Topbar from "./components/topbar/topbar";
 import Single from "./pages/single/single";
@@ -14,9 +14,11 @@ import {
   Link,
   Routes
 } from "react-router-dom";
+import { Context } from "./context/Context";
 function App() {
-  const user =false;
+const {user} = useContext(Context);
   return (
+    
     <Router>
   <Topbar/>
   {/* <Switch>
@@ -37,7 +39,7 @@ function App() {
   </Routes>
   
     </Router>
-      
+    
   );
 }
 

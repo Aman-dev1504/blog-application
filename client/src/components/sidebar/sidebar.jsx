@@ -19,12 +19,10 @@ export default function Sidebar() {
         <div className="sidebarItem">
             <span className="sidebarTitle">About me</span>
             <img 
-            src="https://avatars.githubusercontent.com/u/74093536?s=400&u=da1e3aaed0b2ec4db7ca6220926f31609e5524c4&v=4" 
+            src="https://scontent.fbho2-1.fna.fbcdn.net/v/t1.6435-9/132571703_105067458177607_2777104514256052089_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1rlu_LxuHPsAX8KkTsD&_nc_ht=scontent.fbho2-1.fna&oh=00_AT8_yhlifduRkmXAUD8wqHljiTrg8qVNsGHf28sX-SRDww&oe=630420E3" 
             className="sidebarImage"
              alt="" />
-             <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo doloremque voluptates totam iure,
-                 eaque modi tenetur,
-                 atque sunt est nisi magni quis eligendi qui temporibus aliquid accusamus. Aliquam, odit ,,</p>
+             <p>"We’re dedicated to giving you valuable content with a focus on Technology, Business, Online earning and Investing, and Learning News skills ,,</p>
         <div className="sidebarItem">
         <span className="sidebarTitle">Categories</span>
         <ul className="sidebarList">

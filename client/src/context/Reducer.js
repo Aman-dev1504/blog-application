@@ -4,7 +4,7 @@ const Reducer = (state,action)=>
         case "LOGIN_START":
             return{
                 user:null ,
-                isFetching:true
+                isFetching:true,
                 error:false
            };
            case "LOGIN_SUCCESS":
@@ -17,9 +17,16 @@ const Reducer = (state,action)=>
             return{
                 user:null ,
                 isFetching:true,
+                error:true
+           };
+           case "Logout":
+            return{
+                user:null ,
+                isFetching:false,
                 error:false
            };
            default:
             return state;
     }
-}
+};
+export default Reducer;
