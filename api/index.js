@@ -7,9 +7,9 @@ const userRoute = require("./routes/users");
 const postRoute = require("./routes/post");
 const CategoryRoute = require("./routes/categories");
 const multer= require("multer");
-const path = require ("path");
+
 dotenv.config();
-app.use("/images",express.static(path.join(__dirname,"/images")));
+
 app.use(express.json() );
 mongoose.connect(process.env.Mongo_URL,
 {useNewUrlParser:true,
