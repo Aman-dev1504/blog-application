@@ -7,20 +7,22 @@ import Settings from "./pages/settings/settings";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Contactus from "./pages/contact/contact";
-
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 import { Context } from "./context/Context";
 function App() {
+  
+
 const {user} = useContext(Context);
   return (
-    
+  
     <Router>
+
   <Topbar/>
+  
   {/* <Switch>
  <Route path="/" >
  <Home/>
@@ -39,7 +41,7 @@ const {user} = useContext(Context);
   </Routes>
   
     </Router>
-    
+
   );
 }
 

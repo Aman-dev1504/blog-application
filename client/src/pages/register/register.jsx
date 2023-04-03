@@ -9,21 +9,37 @@ export default function Register() {
   const [password,setPassword ]=useState(" ");
   const [error,setError ]=useState(false);
 
-  const handleSubmit=async (e)=>{
+  // const handleSubmit=async (e)=>{
+  //   e.preventDefault();
+  //   setError(false);
+  //   try{
+  //     const res= await axios.post("/auth/register",{
+  //       username,
+  //       email,
+  //       password,
+  //     });
+  // res.data && window.location.replace("/login");
+  //   }catch(err){
+  //     setError(true);
+  //   }
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
-    try{
-      const res= await axios.post("/auth/register",{
+    try {
+      const res = await axios.post("/auth/register", {
         username,
         email,
         password,
       });
-  res.data && window.location.replace("/login");
-    }catch(err){
+      if (res.data) {
+        window.location.replace("/login");
+      }
+    } catch (err) {
       setError(true);
     }
-   
   };
+   
+  
   return (
     <div className="signup">
         <div className="signup-img">
