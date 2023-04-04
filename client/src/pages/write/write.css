@@ -29,6 +29,7 @@ align-items: center;
 }
 .writeInput{
     font-size: 30px;
+    width: 70vw;
     border: none;
     padding: 20px;
     outline: none;

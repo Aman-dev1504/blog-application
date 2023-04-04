@@ -1,27 +1,14 @@
 import "./register.css"
 import signupimg from "../../assets/signup.gif";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 export default function Register() {
-  const [username,setUsername]=useState(" ");
-  const [email,setEmail]=useState(" ");
-  const [password,setPassword ]=useState(" ");
-  const [error,setError ]=useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
-  // const handleSubmit=async (e)=>{
-  //   e.preventDefault();
-  //   setError(false);
-  //   try{
-  //     const res= await axios.post("/auth/register",{
-  //       username,
-  //       email,
-  //       password,
-  //     });
-  // res.data && window.location.replace("/login");
-  //   }catch(err){
-  //     setError(true);
-  //   }
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
@@ -31,14 +18,11 @@ export default function Register() {
         email,
         password,
       });
-      if (res.data) {
-        window.location.replace("/login");
-      }
+      res.data && window.location.replace("/login");
     } catch (err) {
       setError(true);
     }
   };
-   
   
   return (
     <div className="signup">
