@@ -10,8 +10,14 @@ import Contactus from "./pages/contact/contact";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Context } from "./context/Context";
 import { Rings } from "react-loader-spinner";
+import About from "./pages/About/About";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "./App.css";
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const { user } = useContext(Context);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -40,6 +46,7 @@ function App() {
       <Topbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contactus />} />
         <Route exact path="/login" element={user ? <Home /> : <Login />} />
         <Route
