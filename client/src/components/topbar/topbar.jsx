@@ -1,10 +1,10 @@
 import "./topbar.css";
 import { Link } from "react-router-dom";
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { useHistory } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Topbar() {
   const { user, dispatch } = useContext(Context);
   const handleLogout = () => {
@@ -12,7 +12,7 @@ export default function Topbar() {
   };
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
   const PF = "http://localhost:3000/images/";
 
   const [searchToggled, setSearchToggled] = useState(false);
@@ -58,11 +58,7 @@ export default function Topbar() {
       </div>
       <div className="topRight">
         {user ? (
-          <img
-            className="top-img"
-            src={PF + user.profilePic}
-            alt=""
-          />
+          <img className="top-img" src={PF + user.profilePic} alt="" />
         ) : (
           <ul className="topList">
             <li className="topList-item">
@@ -78,10 +74,22 @@ export default function Topbar() {
           </ul>
         )}
 
-<i  className={searchToggled ? "topIcon-srch fa-solid fa-times" : "topIcon-srch fa-solid fa-magnifying-glass"} onClick={toggleSearch}></i>
-        <div className={searchToggled ? "togglesearch" : "togglesearch hidden"} style={{ display: searchToggled ? "block" : "none" }}   >
-          <input type="text" placeholder="Search here"  />
-          <button><i className="fa-solid fa-magnifying-glass"></i></button>
+        <i
+          className={
+            searchToggled
+              ? "topIcon-srch fa-solid fa-times"
+              : "topIcon-srch fa-solid fa-magnifying-glass"
+          }
+          onClick={toggleSearch}
+        ></i>
+        <div
+          className={searchToggled ? "togglesearch" : "togglesearch hidden"}
+          style={{ display: searchToggled ? "block" : "none" }}
+        >
+          <input type="text" placeholder="Search here" />
+          <button>
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
       </div>
     </div>

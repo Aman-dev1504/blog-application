@@ -15,6 +15,9 @@
   align-items: center;
   font-family: "Poppins", sans-serif;
   z-index: 999;
+  -webkit-box-shadow: -1px 1px 14px -4px rgba(0,0,0,0.47);
+-moz-box-shadow: -1px 1px 14px -4px rgba(0,0,0,0.47);
+box-shadow: -1px 1px 14px -4px rgba(0,0,0,0.47);
 }
 .topLeft,
 .topRight {
@@ -31,7 +34,6 @@
   font-size: 20px;
   margin-right: 10px;
   cursor: pointer;
-
 }
 .fa-twitter {
   color: #13bddf;
@@ -68,8 +70,11 @@
   color: #06283d;
   cursor: pointer;
   margin-left: 15px;
-  transition-duration: 1s;
+  transition: transform 2s ease-in-out ;
+  animation-fill-mode: forwards;
 }
+
+
 .togglesearch {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -114,7 +119,7 @@
 .togglesearch button {
   width: 40px;
   height: 40px;
-  padding:5px 5px;
+  padding: 5px 5px;
   background: #06283d;
   font-family: Poppins;
   color: #fff;
@@ -126,7 +131,7 @@
 }
 .togglesearch button:hover {
   background: #fff;
-  color:#06283d ;
+  color: #06283d;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 @keyframes fade-down {
